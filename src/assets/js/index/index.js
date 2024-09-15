@@ -36,27 +36,38 @@ const cardContainer = generateCardContainer();
 const searchButton = createElementDom('button','Ricerca','searchbutton')
 containerSearchbar.append(searchButton);
 
-//Add event listener on searchbutton
-searchButton.addEventListener("click", async (e)=>{
-    const subjectData = searchInput.value;
-    let   subjectDataSave = await  GetBook(subjectData,10); //get data
-    const books = subjectDataSave.works.map(work=>{ //filter data
-        return{
-            author : work.authors ? work.authors.map(author => author.name).join(', ') : 'The author is unknown',
-            title : work.title,
-            bookImage : work.cover_id ? `https://covers.openlibrary.org/b/id/${work.cover_id}.jpg` : 'placeHolder',
-            key : work.key
-        };
-    subjectData = '';
-    })
+async function search(){
+    const subjectData = searchInput.value.toLowerCase();
+    let   subjectDataSave = await GetBook(subjectData,10); //get data
+    if (!subjectDataSave){
+        alert('Enter a category like love, adventure, horror ecc...');
+        return;
+    }else{
+        const books = subjectDataSave.works.map(work=>{ //filter data
+            return{
+                author : work.authors ? work.authors.map(author => author.name).join(', ') : 'The author is unknown',
+                title : work.title,
+                bookImage : work.cover_id ? `https://covers.openlibrary.org/b/id/${work.cover_id}.jpg` : 'placeHolder',
+                key : work.key
+            };
+    });
+    searchInput.value = '';
 
     //reset content of card container
     while(cardContainer.firstChild){
         cardContainer.removeChild(cardContainer.firstChild);
     }
-
     //Set function generateCards
     books.forEach (book => generateCards(book));
+} 
+}
+
+searchButton.addEventListener("click", search);
+
+search.searchInput.addEventListener('keydown', (e)=>{
+    if(e.key ==='Enter'){
+        search();
+    }
 })
 
 function generateCards(book){
