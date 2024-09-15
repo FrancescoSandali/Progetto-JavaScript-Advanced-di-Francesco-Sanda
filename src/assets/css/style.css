@@ -163,4 +163,3 @@ p{color: #a7a9be;font-weight:normal;line-height: 1.5;}
 .text-reveal {transform: translateY(1rem); clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);opacity: 0;}
 .fade-in{opacity:0;margin-top:200px;}
 .fade-up{opacity:0;margin-top:15px;}
-.scrollFade-in{opacity:0;margin-top:200px;}

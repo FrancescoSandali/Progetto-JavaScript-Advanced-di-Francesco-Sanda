@@ -6,14 +6,17 @@ import { createSearchBar } from './searchbar.js';
 import { generateCardContainer } from './card.js';
 import {  GetBook } from '../api.js';
 import {startAnimation} from '../animations.js';
-
-
+import { setFavicon } from '../utilities.js';
 
 // Import image
 import placeHolder from '../../img/placeholder.png';
 
 //Import file css
 import'../../css/style.css';
+
+//Set Favicon
+import Favicon from '../../img/favicon.png';
+setFavicon(Favicon);
 
 //Creation of costant body
 const bodyReal = document.body;

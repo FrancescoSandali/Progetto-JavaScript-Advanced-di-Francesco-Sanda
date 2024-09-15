@@ -9,4 +9,14 @@ export function createElementDom(tagName, innerHTML, className){
 }
 
 
-//Crea Funzione generaCard
+//Create Favicon
+
+export function setFavicon(imageURL) {
+    let favImage = document.querySelector("link[rel~='icon']");
+    if (!favImage) {
+        favImage = document.createElement('link');
+        favImage.rel = 'icon';
+        document.head.appendChild(favImage);
+    }
+    favImage.href = imageURL;
+}

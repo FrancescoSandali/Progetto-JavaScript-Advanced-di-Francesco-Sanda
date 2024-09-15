@@ -9,7 +9,6 @@ import { GetBookDetails } from '../api.js';
 import { GetBookRatings } from '../api.js';
 import { createHeader } from './header.js';
 import { createMediaText } from './mediatext.js';
-import {startAnimation} from '../animations.js';
 
 //Import file css
 import'../../css/style.css';
@@ -22,7 +21,10 @@ bodyReal.append(body);
 // Import image
 import placeHolder from '../../img/placeholder.png';
 
-
+import { setFavicon } from '../utilities.js';
+//Set Favicon
+import Favicon from '../../img/favicon.png';
+setFavicon(Favicon);
 
 //Create layout in the page
 createHeader();
