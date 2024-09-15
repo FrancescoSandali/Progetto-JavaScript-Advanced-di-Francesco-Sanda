@@ -33,16 +33,17 @@ const containerSearchbar = createSearchBar();
 const cardContainer = generateCardContainer();
 
 //Main function
+
+const searchBar = createElementDom('input','','searchbar')
+searchBar.setAttribute('id', 'searchInput');
+containerSearchbar.append(searchBar);
+
 const searchButton = createElementDom('button','Ricerca','searchbutton')
 containerSearchbar.append(searchButton);
 
 async function search(){
     const subjectData = searchInput.value.toLowerCase();
-    let   subjectDataSave = await GetBook(subjectData,10); //get data
-    if (!subjectDataSave){
-        alert('Enter a category like love, adventure, horror ecc...');
-        return;
-    }else{
+    let   subjectDataSave = await GetBook(subjectData,50); //get data
         const books = subjectDataSave.works.map(work=>{ //filter data
             return{
                 author : work.authors ? work.authors.map(author => author.name).join(', ') : 'The author is unknown',
@@ -60,11 +61,11 @@ async function search(){
     //Set function generateCards
     books.forEach (book => generateCards(book));
 } 
-}
+
 
 searchButton.addEventListener("click", search);
 
-search.searchInput.addEventListener('keydown', (e)=>{
+searchBar.addEventListener('keydown', (e)=>{
     if(e.key ==='Enter'){
         search();
     }

@@ -21,11 +21,6 @@ export function createSearchBar(){
     const containerSearchbar = createElementDom('div','','containerSearchbar')
     containerLight.append(containerSearchbar);
 
-    //Create Searchbar
-    const searchBar = createElementDom('input','','searchbar')
-    searchBar.setAttribute('id', 'searchInput');
-    containerSearchbar.append(searchBar);
-
     return containerSearchbar;
      
 }
