@@ -44,6 +44,10 @@ containerSearchbar.append(searchButton);
 async function search(){
     const subjectData = searchInput.value.toLowerCase();
     let   subjectDataSave = await GetBook(subjectData,50); //get data
+    if (!subjectDataSave.works || subjectDataSave.works.length === 0) {
+        alert('No books found for the specified category. Please check and try again.');
+        return;
+    }
         const books = subjectDataSave.works.map(work=>{ //filter data
             return{
                 author : work.authors ? work.authors.map(author => author.name).join(', ') : 'The author is unknown',
@@ -66,7 +70,7 @@ async function search(){
 searchButton.addEventListener("click", search);
 
 searchBar.addEventListener('keydown', (e)=>{
-    if(e.key ==='Enter'){
+    if(e.key === 'Enter'){
         search();
     }
 })

@@ -4,12 +4,6 @@ export async function GetBook(subject, limit){
     try{
         const response = await axios.get(`https://openlibrary.org/subjects/${subject}.json?limit=${limit}`);
         const subjectData = response.data;
-
-        if(!subjectData.works || subjectData.works.length === 0){
-            alert('No books found for the specified category. Please check and try again.');
-            return {works: []};
-        }
-
         return subjectData;
     }
     catch(error){
