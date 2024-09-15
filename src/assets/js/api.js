@@ -2,7 +2,7 @@ import axios from 'axios'
 
 export async function GetBook(subject, limit){
     try{
-        const response = await axios.get(`http://openlibrary.org/subjects/${subject}.json?limit=${limit}`);
+        const response = await axios.get(`https://openlibrary.org/subjects/${subject}.json?limit=${limit}`);
         const subjectData = response.data;
         return subjectData;
     }
