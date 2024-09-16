@@ -10,7 +10,8 @@ import { setFavicon } from '../utilities.js';
 
 // Import Basic image
 import placeHolder from '../../img/placeholder.png';
-const imageBase = placeHolder;
+const imageBase = createElementDom('img', '', '');
+imageBase.src=placeHolder;
 
 //Import file css
 import'../../css/style.css';
