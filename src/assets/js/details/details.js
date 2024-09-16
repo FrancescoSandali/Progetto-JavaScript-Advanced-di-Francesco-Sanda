@@ -18,8 +18,9 @@ const bodyReal = document.body;
 export const body = createElementDom('div', '', 'overflow');
 bodyReal.append(body);
 
-// Import image
+// Import Basic image
 import placeHolder from '../../img/placeholder.png';
+const imageBase = placeHolder
 
 import { setFavicon } from '../utilities.js';
 //Set Favicon
@@ -43,7 +44,7 @@ document.addEventListener('DOMContentLoaded', async ()=>{
 
             //Extraction of Image
             const detailsImage = detailsBookDataSave.covers[0];
-            const imageUrl = detailsImage ? `https://covers.openlibrary.org/b/id/${detailsImage}.jpg` : 'placeHolder';
+            const imageUrl = detailsImage ? `https://covers.openlibrary.org/b/id/${detailsImage}.jpg` : imageBase;
 
             //Extraction of Title
             const detailsTitle = detailsBookDataSave.title;
