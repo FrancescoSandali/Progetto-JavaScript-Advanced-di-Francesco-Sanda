@@ -34,7 +34,7 @@ export function createMediaText(){
         subTitle.after(paragraph);
 
         //Create button
-        const button = createElementDom('a',"scopri di più",'button fade-up');
+        const button = createElementDom('a',"Read More",'button fade-up');
         button.href = '#spacer';
         paragraph.after(button);
 

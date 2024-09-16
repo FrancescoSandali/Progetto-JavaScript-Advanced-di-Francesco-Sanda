@@ -39,7 +39,7 @@ const searchBar = createElementDom('input','','searchbar')
 searchBar.setAttribute('id', 'searchInput');
 containerSearchbar.append(searchBar);
 
-const searchButton = createElementDom('button','Ricerca','searchbutton')
+const searchButton = createElementDom('button','Search','searchbutton')
 containerSearchbar.append(searchButton);
 
 async function search(){

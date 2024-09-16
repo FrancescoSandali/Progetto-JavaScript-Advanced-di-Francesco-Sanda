@@ -14,7 +14,7 @@ export function createSearchBar(){
 
     //Title of this container
 
-    const titlesection = createElementDom('h3','Cerca i libri per la tua categoria preferita', 'text-1 mb-3');
+    const titlesection = createElementDom('h3','Find your books', 'text-1 mb-3');
     containerLight.append(titlesection);
 
     //Create containerSearchbar
