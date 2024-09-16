@@ -10,8 +10,7 @@ import { setFavicon } from '../utilities.js';
 
 // Import Basic image
 import placeHolder from '../../img/placeholder.png';
-const imageBase = createElementDom('img', '', '');
-imageBase.src=placeHolder;
+const imageBase = placeHolder
 
 //Import file css
 import'../../css/style.css';
@@ -54,7 +53,7 @@ async function search(){
             return{
                 author : work.authors ? work.authors.map(author => author.name).join(', ') : 'The author is unknown',
                 title : work.title,
-                bookImage : work.cover_id ? `https://covers.openlibrary.org/b/id/${work.cover_id}.jpg` : imageBase.src,
+                bookImage : work.cover_id ? `https://covers.openlibrary.org/b/id/${work.cover_id}.jpg` : imageBase,
                 key : work.key
             };
     });
