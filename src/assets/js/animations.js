@@ -38,7 +38,6 @@ export const startAnimation = addEventListener('DOMContentLoaded', async ()=>{
     gsap.to(".parallax",{
         y:200,
         scrollTrigger:{
-            trigger: '.media-image',
             start:"top top",
             end:"bottom bottom",
             scrub:true
