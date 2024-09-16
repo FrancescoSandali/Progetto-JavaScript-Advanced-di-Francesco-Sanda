@@ -54,7 +54,7 @@ async function search(){
             return{
                 author : work.authors ? work.authors.map(author => author.name).join(', ') : 'The author is unknown',
                 title : work.title,
-                bookImage : work.cover_id ? `https://covers.openlibrary.org/b/id/${work.cover_id}.jpg` : 'imageBase',
+                bookImage : work.cover_id ? `https://covers.openlibrary.org/b/id/${work.cover_id}.jpg` : imageBase.src,
                 key : work.key
             };
     });
