@@ -51,12 +51,15 @@ document.addEventListener('DOMContentLoaded', async ()=>{
 
             //Extraction of Description
             let detailsDescription = '';
-            if(typeof detailsDescription.detailsDescription === 'string'){
+            if(typeof detailsBookDataSave.description === 'string'){
                 detailsDescription =  detailsBookDataSave.description;
-            }else if(detailsDescription.detailsDescription === 'object' && detailsBookDataSave.description.value){
+            }else if(detailsBookDataSave.description === 'object' && detailsBookDataSave.description.value){
                 detailsDescription = detailsBookDataSave.description.value;
+            }else{
+                detailsDescription = 'No description available';
             }
-            
+            console.log(detailsDescription );
+
 
             //Extraction of Valutation Value
             const ratingsValue = ratingsBookDataSave.summary.average;
