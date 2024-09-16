@@ -101,7 +101,7 @@ function generateCards(book){
     const cardTextP = createElementDom('p',`Written by: ${book.author}`,'mb-3');
     cardTextTitle.after(cardTextP);
 
-    const cardButton = createElementDom('a',`Scopri di più`,'button mt-1');
+    const cardButton = createElementDom('a',`Read More`,'button mt-1');
     cardTextP.after(cardButton);
 
     
