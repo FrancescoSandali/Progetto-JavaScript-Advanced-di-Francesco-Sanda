@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', async ()=>{
 
             //Extraction of Image
             const detailsImage = detailsBookDataSave.covers[0];
-            const imageUrl = detailsImage ? `https://covers.openlibrary.org/b/id/${detailsImage}-S.jpg` : imageBase;
+            const imageUrl = detailsImage ? `https://covers.openlibrary.org/b/id/${detailsImage}-M.jpg` : imageBase;
 
             //Extraction of Title
             const detailsTitle = detailsBookDataSave.title;
