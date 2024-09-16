@@ -50,7 +50,13 @@ document.addEventListener('DOMContentLoaded', async ()=>{
             const detailsTitle = detailsBookDataSave.title;
 
             //Extraction of Description
-            const detailsDescription = detailsBookDataSave.description;
+            let detailsDescription = '';
+            if(typeof detailsDescription.detailsDescription === 'string'){
+                detailsDescription =  detailsBookDataSave.description;
+            }else if(detailsDescription.detailsDescription === 'object' && detailsBookDataSave.description.value){
+                detailsDescription = detailsBookDataSave.description.value;
+            }
+            
 
             //Extraction of Valutation Value
             const ratingsValue = ratingsBookDataSave.summary.average;
