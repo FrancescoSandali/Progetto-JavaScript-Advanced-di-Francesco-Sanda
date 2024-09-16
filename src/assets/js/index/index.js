@@ -10,8 +10,7 @@ import { setFavicon } from '../utilities.js';
 
 // Import Basic image
 import placeHolder from '../../img/placeholder.png';
-const imageBase = '';
-imageBase.src = placeHolder;
+
 
 //Import file css
 import'../../css/style.css';
@@ -54,7 +53,7 @@ async function search(){
             return{
                 author : work.authors ? work.authors.map(author => author.name).join(', ') : 'The author is unknown',
                 title : work.title,
-                bookImage : work.cover_id ? `https://covers.openlibrary.org/b/id/${work.cover_id}.jpg` : 'imageBase',
+                bookImage : work.cover_id ? `https://covers.openlibrary.org/b/id/${work.cover_id}.jpg` : 'imageBase.src = placeHolder',
                 key : work.key
             };
     });
@@ -86,6 +85,8 @@ function generateCards(book){
     //Generate card image
     const cardImageContainer = createElementDom('div', '', 'card-image-container');
     card.append(cardImageContainer);
+
+    
     const cardImage = createElementDom('img','','');
     cardImage.src = book.bookImage;
     cardImageContainer.append(cardImage);
