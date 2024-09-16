@@ -8,8 +8,10 @@ import {  GetBook } from '../api.js';
 import {startAnimation} from '../animations.js';
 import { setFavicon } from '../utilities.js';
 
-// Import image
+// Import Basic image
 import placeHolder from '../../img/placeholder.png';
+const imageBase = '';
+imageBase.src = placeHolder;
 
 //Import file css
 import'../../css/style.css';
@@ -52,7 +54,7 @@ async function search(){
             return{
                 author : work.authors ? work.authors.map(author => author.name).join(', ') : 'The author is unknown',
                 title : work.title,
-                bookImage : work.cover_id ? `https://covers.openlibrary.org/b/id/${work.cover_id}.jpg` : 'placeHolder',
+                bookImage : work.cover_id ? `https://covers.openlibrary.org/b/id/${work.cover_id}.jpg` : 'imageBase',
                 key : work.key
             };
     });

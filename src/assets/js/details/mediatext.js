@@ -21,7 +21,7 @@ export function createMediaText(image, titleBook, description, value, count){
         text.append(title);
 
         //Create Subtitle
-        const subTitle = createElementDom('h2',`Valutazione: ${value} su 5<br> Hanno valutato: ${count} persone`, 'text-6 mt-1');
+        const subTitle = createElementDom('h2',`Ratings: ${value} / 5<br> Have ratings: ${count} people`, 'text-6 mt-1');
         title.after(subTitle);
 
         //Create paragraph

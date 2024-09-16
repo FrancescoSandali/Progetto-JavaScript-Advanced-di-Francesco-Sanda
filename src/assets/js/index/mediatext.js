@@ -22,15 +22,15 @@ export function createMediaText(){
         container.append(text);
 
         //Create Title
-        const title = createElementDom('h1','Trova il tuo prossimo libro preferito per ogni genere', 'text-1 text-reveal');
+        const title = createElementDom('h1','Find your next favourite book for each kind', 'text-1 text-reveal');
         text.append(title);
 
         //Create Subtitle
-        const subTitle = createElementDom('h2','Esplora una vastissima selezione di libri per ogni tuo interesse', 'text-2 mt-1 text-reveal');
+        const subTitle = createElementDom('h2','Explore a so extended selection of books for every interests you have', 'text-2 mt-1 text-reveal');
         title.after(subTitle);
 
         //Create paragraph
-        const paragraph = createElementDom('p',`Sei un appassionato di libri ma non sai cosa scegliere? <br> Clicca sul pulsante scopri di più e i tuoi dubbi svaniranno. <br> Inserisci semplicemente il genere desiderato nel campo di ricerca e otterrai una lista di libri corrispondenti.  <br> Per ogni libro, verranno mostrati il titolo, l'autore e una breve descrizione, così potrai trovare facilmente il prossimo libro da leggere.`,'mt-1 mb-2 text-reveal');
+        const paragraph = createElementDom('p',`You are a books lover, but you don’t know what  to choose? <br> Click on the button find more and your doubts will disappear. <br> Insert the kind wished in the research’s area and you will obtain a list of corresponded books. <br> For each book, the title, the author and a small description will be showed to you; by this way, you will find easily your next book.`,'mt-1 mb-2 text-reveal');
         subTitle.after(paragraph);
 
         //Create button
